@@ -1,0 +1,28 @@
+{
+  "name": "hw2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec npm run babel",
+    "babel": "babel-node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okachynskyy/nodejs-homeworks.git"
+  },
+  "author": "Oleksiy Kachynskyy <oleksiy.kachynskyy@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/okachynskyy/nodejs-homeworks/issues"
+  },
+  "homepage": "https://github.com/okachynskyy/nodejs-homeworks#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "nodemon": "^1.17.3"
+  }
+}
