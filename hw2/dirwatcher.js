@@ -1,8 +1,10 @@
 import fs from 'fs';
 import path from 'path';
+import EventEmitter from 'events';
 
-export default class DirWatcher {
+export class DirWatcher extends EventEmitter {
   constructor() {
+    super(...arguments);
     this.intervalId = null;
     this.fileList = {};
     this.updatedFiles = new Set();
@@ -31,7 +33,9 @@ export default class DirWatcher {
         });
 
         if (this.updatedFiles.size > 0) {
-          console.log(this.updatedFiles);
+          this.updatedFiles.forEach(fileName => {
+            this.emit('changed', path.join(dirPath, fileName));
+          })
           this.updatedFiles.clear();
         }
       });
