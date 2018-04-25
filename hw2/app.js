@@ -1,9 +1,23 @@
 import path from 'path';
 import { DirWatcher } from './dirwatcher'
+import { Importer } from './importer';
 
-const Dirwatcher = new DirWatcher();
-Dirwatcher.watch(path.join(__dirname, 'data'), 200);
+const dirwatcher = new DirWatcher();
+const importer = new Importer();
 
-Dirwatcher.on('changed', (filePath) => {
-  console.log('changed', filePath);
+dirwatcher.watch(path.join(__dirname, 'data'), 200);
+
+dirwatcher.on('changed', (filePath) => {
+  const result = importer.importSync(filePath);
+  console.log('importSync \n', result);
+});
+
+dirwatcher.on('changed', (filePath) => {
+  importer.import(filePath)
+    .then(result => {
+      console.log('import \n', result);
+    })
+    .catch(err => {
+      console.log(`Error: ${err}`);
+    });
 });
