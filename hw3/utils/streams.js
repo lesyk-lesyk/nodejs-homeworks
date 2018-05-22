@@ -11,6 +11,7 @@ switch (program.action) {
     require('./lib/reverse')(process.stdin, process.stdout);
     break;
   case 'transform':
+    require('./lib/transform')(process.stdin, process.stdout);
     break;
   case 'outputFile':
     break;
