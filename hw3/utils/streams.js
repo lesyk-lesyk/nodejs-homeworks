@@ -5,6 +5,7 @@ program
   .version('0.1.0')
   .option('-a, --action [value]', 'Provide necessary action name')
   .option('-f, --file [value]', 'File name')
+  .option('-p, --path [value]', 'Folder path')
   .parse(process.argv);
 
 try {
@@ -29,6 +30,8 @@ try {
       require('./lib/convert-to-file')(filePath);
       break;
     case 'cssBundler':
+      const folderPath = pUtils.resolveFolderPath(__dirname, program.path);
+      require('./lib/css-bundler')(folderPath);
       break;
     default:
       console.error('Wrong input parameters!')

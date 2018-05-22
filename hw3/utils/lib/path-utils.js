@@ -14,6 +14,19 @@ const resolveFilePath = (dir, fileName) => {
   return filePath;
 };
 
+const resolveFolderPath = (dir, relativeFolderPath) => {
+  if (!relativeFolderPath) {
+    throw new Error('Please, provide a folder path!');
+  }
+  const folderPath = path.resolve(__dirname, `../${relativeFolderPath}`);
+
+  if (!fs.existsSync(folderPath)) {
+    throw new Error(`Folder not exist: ${folderPath}`);
+  }
+
+  return folderPath;
+};
+
 const replaceExt = (npath, ext) => {
   if (typeof npath !== 'string') {
     return npath;
@@ -29,5 +42,6 @@ const replaceExt = (npath, ext) => {
 
 module.exports = {
   resolveFilePath,
+  resolveFolderPath,
   replaceExt
 }
