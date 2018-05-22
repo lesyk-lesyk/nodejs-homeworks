@@ -1,5 +1,5 @@
 const program = require('commander');
-const resolveFilePath = require('./lib/path-resolver');
+const pUtils = require('./lib/path-utils');
 
 program
   .version('0.1.0')
@@ -17,14 +17,16 @@ try {
       require('./lib/transform')(process.stdin, process.stdout);
       break;
     case 'outputFile':
-      filePath = resolveFilePath(__dirname, program.file);
+      filePath = pUtils.resolveFilePath(__dirname, program.file);
       require('./lib/output-file')(filePath, process.stdout);
       break;
     case 'convertFromFile':
-      filePath = resolveFilePath(__dirname, program.file);
+      filePath = pUtils.resolveFilePath(__dirname, program.file);
       require('./lib/convert-from-file')(filePath, process.stdout);
       break;
     case 'convertToFile':
+      filePath = pUtils.resolveFilePath(__dirname, program.file);
+      require('./lib/convert-to-file')(filePath);
       break;
     case 'cssBundler':
       break;
