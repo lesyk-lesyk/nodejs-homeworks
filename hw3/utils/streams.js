@@ -8,6 +8,7 @@ program
   .parse(process.argv);
 
 try {
+  let filePath;
   switch (program.action) {
     case 'reverse':
       require('./lib/reverse')(process.stdin, process.stdout);
@@ -16,10 +17,12 @@ try {
       require('./lib/transform')(process.stdin, process.stdout);
       break;
     case 'outputFile':
-      const filePath = resolveFilePath(__dirname, program.file);
+      filePath = resolveFilePath(__dirname, program.file);
       require('./lib/output-file')(filePath, process.stdout);
       break;
     case 'convertFromFile':
+      filePath = resolveFilePath(__dirname, program.file);
+      require('./lib/convert-from-file')(filePath, process.stdout);
       break;
     case 'convertToFile':
       break;

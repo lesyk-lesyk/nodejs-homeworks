@@ -1,7 +1,7 @@
 const through = require('through2');
 
 module.exports = (stdin, stdout) => {
-  const transform = function write(buffer, encoding, next) {
+  const transform = function (buffer, encoding, next) {
     this.push(buffer.toString().toUpperCase());
     next();
   }

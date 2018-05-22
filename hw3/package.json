@@ -22,6 +22,7 @@
   "homepage": "https://github.com/okachynskyy/nodejs-homeworks#readme",
   "dependencies": {
     "commander": "^2.15.1",
+    "csvjson": "^5.0.0",
     "through2": "^2.0.3"
   }
 }
