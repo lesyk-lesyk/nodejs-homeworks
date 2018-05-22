@@ -1,8 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-module.exports = (fileName, stdOut) => {
-  fs.createReadStream(
-    path.resolve(__dirname, `../${fileName}`)
-  ).pipe(stdOut);
+module.exports = (filePath, stdOut) => {
+  fs.createReadStream(filePath).pipe(stdOut);
 }
