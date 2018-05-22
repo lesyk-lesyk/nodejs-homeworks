@@ -1,6 +1,6 @@
 const through = require('through2');
 
-module.exports = (stdin, stdout) => {
+module.exports = (stdIn, stdOut) => {
   const transform = function (buffer, encoding, next) {
     const input = buffer.toString();
 
@@ -12,5 +12,5 @@ module.exports = (stdin, stdout) => {
     next();
   };
 
-  stdin.pipe(through(transform)).pipe(stdout);
+  stdIn.pipe(through(transform)).pipe(stdOut);
 }

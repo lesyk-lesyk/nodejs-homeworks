@@ -3,7 +3,7 @@ const program = require('commander');
 program
   .version('0.1.0')
   .option('-a, --action [value]', 'Provide necessary action name')
-  .option('-f, --file', 'File name')
+  .option('-f, --file [value]', 'File name')
   .parse(process.argv);
 
 switch (program.action) {
@@ -14,6 +14,7 @@ switch (program.action) {
     require('./lib/transform')(process.stdin, process.stdout);
     break;
   case 'outputFile':
+    require('./lib/output-file')(program.file, process.stdout);
     break;
   case 'convertFromFile':
     break;
