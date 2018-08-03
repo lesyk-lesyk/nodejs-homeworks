@@ -12,3 +12,9 @@ CD to `http-servers` folder and execute
 - json-server
 
   `node json-server.js`
+
+- echo server (test `curl -d 'test' localhost:3000`)
+
+  `node echo-server.js`
+
+  
