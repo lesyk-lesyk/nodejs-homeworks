@@ -1,0 +1,10 @@
+{
+    "name": "NodeMP HW App",
+    "jwtSecret": "VERY_SECRET",
+    "facebookKey": "1776264225943883",
+    "facebookSecret": "6a0fd0b51d2e677704c2962092388846",
+    "twitterKey": "key",
+    "twitterSecret": "secret",
+    "googleKey": "key",
+    "googleSecret": "secret"
+}
