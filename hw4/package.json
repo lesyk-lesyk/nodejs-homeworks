@@ -1,0 +1,22 @@
+{
+  "name": "hw4",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okachynskyy/nodejs-homeworks.git"
+  },
+  "author": "Oleksiy Kachynskyy <oleksiy.kachynskyy@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/okachynskyy/nodejs-homeworks/issues"
+  },
+  "homepage": "https://github.com/okachynskyy/nodejs-homeworks#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
