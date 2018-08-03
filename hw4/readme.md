@@ -17,4 +17,5 @@ CD to `http-servers` folder and execute
 
   `node echo-server.js`
 
-  
+# App with routes
+  run `npm start`
